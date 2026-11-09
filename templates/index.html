@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Try-On Experience</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container thematic-panel">
+        <header>
+            <div class="badge">⏣ Unlock Your Style Spark! &rightarrow;</div>
+            <h1>One-click for Virtual Try-On</h1>
+            <p>Dive into the fashion assets, where innovative AI technology meets your style</p>
+        </header>
+
+        <main class="upload-section" id="upload-section">
+            <div class="drop-zones">
+                <!-- Person Image -->
+                <div class="drop-zone" id="dz-person">
+                    <input type="file" id="person-image" accept="image/*" hidden>
+                    <div class="dz-content">
+                        <span class="icon">👤</span>
+                        <p>Your Photo</p>
+                        <small>Full or half body</small>
+                    </div>
+                </div>
+
+                <!-- Upper Body Garment -->
+                <div class="drop-zone" id="dz-upper">
+                    <input type="file" id="upper-image" accept="image/*" hidden>
+                    <div class="dz-content">
+                        <span class="icon">👕</span>
+                        <p>Upper Garment</p>
+                        <small>Shirt, jacket, top</small>
+                    </div>
+                </div>
+
+                <!-- Lower Body Garment -->
+                <div class="drop-zone" id="dz-lower">
+                    <input type="file" id="lower-image" accept="image/*" hidden>
+                    <div class="dz-content">
+                        <span class="icon">👖</span>
+                        <p>Lower Garment</p>
+                        <small>Pants, skirt, shorts</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="generate-btn" class="btn-primary" disabled>Generate &nearrow;</button>
+            </div>
+        </main>
+
+        <!-- Loading State -->
+        <div id="loading-overlay" class="hidden">
+            <div class="spinner"></div>
+            <p class="loading-text">Generating... <br><small>Processing garments with AI models. This may take 1-3 minutes...</small></p>
+        </div>
+
+        <!-- Result Section -->
+        <main class="result-section hidden" id="result-section">
+            <div class="comparison-slider" id="comparison-slider">
+                <img id="result-img" src="" alt="Result Image">
+                <div class="slider-handle"></div>
+                <img id="original-img" src="" alt="Original Image" class="original-clip">
+            </div>
+            <div class="actions">
+                <button id="reset-btn" class="btn-secondary">Try Another</button>
+                <button id="download-btn" class="btn-primary">Download Image</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>

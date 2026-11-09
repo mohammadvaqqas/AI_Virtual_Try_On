@@ -1,0 +1,42 @@
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+*.json
+*.pem
+*.key
+
+# Python virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Temporary & cached image files
+*.jpg
+*.jpeg
+*.png
+*.webp
+!static/
+!static/**
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
